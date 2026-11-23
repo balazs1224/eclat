@@ -9,3 +9,5 @@ build/
 
 # Graphify output is local generated navigation state.
 graphify-out/
+*.tsbuildinfo
+next-env.d.ts

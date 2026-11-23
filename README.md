@@ -17,6 +17,10 @@ The initial repository contains the reference material currently available for t
 
 The previous generated frontend implementation is not present in the current workspace, so it is intentionally **not reconstructed from memory**. Continue from the references and from new source files committed to this repository.
 
+## Balatonboglári szállásfoglaló rendszer
+
+A `booking/` mappa egy önálló Next.js + PostgreSQL alkalmazás: egy Éclat-arculatú, balatonboglári nyári szállás saját foglalási weboldala és adminfelülete. Dokumentáció: [`docs/booking/`](docs/booking/README.md). Minden ár DEMÓ, minden nem megadott tény `[PLACEHOLDER]`.
+
 ## Claude Code
 
 Read `CLAUDE.md` before any implementation work.
