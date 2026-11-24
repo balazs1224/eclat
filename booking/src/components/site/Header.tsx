@@ -16,7 +16,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       className={`${overlay ? "absolute" : "sticky bg-ivory/92 backdrop-blur-sm border-b border-line/60"} inset-x-0 top-0 z-40`}
     >
       <div className="wrap flex h-18 items-center justify-between gap-6 md:h-22">
-        <Link href="/" className="group flex items-baseline gap-3" aria-label="Éclat — főoldal">
+        <Link href="/" className="group relative z-50 flex items-baseline gap-3" aria-label="Éclat — főoldal">
           <span className="display text-[1.9rem] leading-none tracking-wide">Éclat</span>
           <span className="hidden text-[0.62rem] uppercase tracking-[0.32em] text-gold-ink sm:inline">Balatonboglár</span>
         </Link>
