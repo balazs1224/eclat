@@ -23,7 +23,8 @@ Az alkalmazás a [`booking/`](../../booking) mappában van.
 | iCal export és import, ütközésjelzés | **Kész** | Nem valós idejű — lásd ARCHITEKTURA.md |
 | E-mail értesítések | **Kész, élesítésre vár** | Alapból csak naplóz (`EMAIL_DRIVER=outbox`); SMTP-szolgáltató beállítása szükséges |
 | Árak, vendégszám, szabályok | **Demó** | Minden ár „DEMÓ” jelölésű; a weboldal bemutató-sávot mutat, amíg ilyen adat van |
-| Szövegek, fotók, elérhetőségek, jogi szövegek | **Placeholder** | `[PLACEHOLDER: …]` jelöléssel; az adminban cserélhető |
+| Szövegek, elérhetőségek, jogi szövegek | **Placeholder** | `[PLACEHOLDER: …]` jelöléssel; az adminban cserélhető |
+| Fotók | **Illusztráció** | Saját, a moodboardból merített rajzok (`references/balaton-moodboard/`), „Illusztráció · [PLACEHOLDER: valós fotó]” jelöléssel; valós fotó feltöltésekor automatikusan lecserélődnek |
 | Online fizetés (Stripe / Barion / SimplePay) | **Integrációra vár** | A modulhatár kész (`src/lib/payments.ts`); szolgáltatóválasztás után köthető be |
 | Airbnb / Booking.com API-integráció, channel manager | **Nincs** | Nincs igazolt API-hozzáférés; csak iCal |
 | NTAK-adatszolgáltatás, VIZA, számlázás | **Nem része** | Külön, erre alkalmas rendszerben kell végezni — lásd JOGI-ELLENORZES.md |

@@ -32,10 +32,12 @@ export default async function HomePage() {
           <div className="absolute inset-x-0 top-0 -z-10 h-[62svh] md:inset-y-0 md:left-[34%] md:h-auto">
             <div className="fade-bottom h-full w-full md:[mask-image:linear-gradient(90deg,transparent_0%,#000_28%,#000_70%,transparent_100%),linear-gradient(180deg,#000_70%,transparent_100%)] md:[mask-composite:intersect]">
               <div className="drift h-full w-full">
-                <Visual media={cover} label="borítókép — a ház és a víz" tone="lake" priority tagClassName="top-24 right-4 md:top-auto md:bottom-28 md:right-[12%]" sizes="(min-width: 768px) 66vw, 100vw" />
+                <Visual media={cover} label="borítókép" tone="lake" illustration="salon" priority tagClassName="top-28 right-4 md:top-auto md:bottom-28 md:right-[12%]" sizes="(min-width: 768px) 66vw, 100vw" />
               </div>
             </div>
           </div>
+          {/* mobilon a fejléc olvashatósága miatt a kép teteje elhalványul */}
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-36 bg-gradient-to-b from-ivory/90 to-transparent md:hidden" />
           <div className="wrap flex min-h-[100svh] flex-col justify-end pt-[52svh] pb-16 md:justify-center md:pt-28 md:pb-24">
             <div className="intro-rise max-w-xl">
               <p className="eyebrow">{t.hero.location}</p>
@@ -83,21 +85,21 @@ export default async function HomePage() {
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-12 md:grid-rows-[repeat(2,minmax(0,22vw))] md:gap-5">
               <figure className="reveal col-span-2 aspect-[4/3] md:col-span-7 md:row-span-2 md:aspect-auto">
-                <Visual media={g(0)} label="nappali / belső tér" tone={galleryTones[0]} sizes="(min-width: 768px) 58vw, 100vw" />
+                <Visual media={g(0)} label="nappali / belső tér" tone={galleryTones[0]} illustration="living" sizes="(min-width: 768px) 58vw, 100vw" />
               </figure>
               <figure className="reveal aspect-[3/4] md:col-span-5 md:aspect-auto">
-                <Visual media={g(1)} label="hálószoba" tone={galleryTones[1]} sizes="(min-width: 768px) 40vw, 50vw" />
+                <Visual media={g(1)} label="hálószoba" tone={galleryTones[1]} illustration="bedroom" sizes="(min-width: 768px) 40vw, 50vw" />
               </figure>
               <figure className="reveal aspect-[3/4] md:col-span-5 md:aspect-auto">
-                <Visual media={g(2)} label="terasz / kert" tone={galleryTones[2]} sizes="(min-width: 768px) 40vw, 50vw" />
+                <Visual media={g(2)} label="terasz / kert" tone={galleryTones[2]} illustration="terrace" sizes="(min-width: 768px) 40vw, 50vw" />
               </figure>
             </div>
             <div className="mt-3 grid grid-cols-2 gap-3 md:mt-5 md:grid-cols-12 md:gap-5">
               <figure className="reveal col-span-2 aspect-[16/9] md:col-span-8 md:col-start-2">
-                <Visual media={g(3)} label="részlet / hangulat" tone={galleryTones[3]} sizes="(min-width: 768px) 66vw, 100vw" />
+                <Visual media={g(3)} label="részlet / hangulat" tone={galleryTones[3]} illustration="bath" sizes="(min-width: 768px) 66vw, 100vw" />
               </figure>
               <figure className="reveal hidden aspect-[3/4] md:col-span-3 md:block md:self-end">
-                <Visual media={g(4)} label="környék / víz" tone={galleryTones[4]} sizes="25vw" />
+                <Visual media={g(4)} label="környék / víz" tone={galleryTones[4]} illustration="lake" sizes="25vw" />
               </figure>
             </div>
             {gallery.length > 5 && (
@@ -138,7 +140,7 @@ export default async function HomePage() {
         </section>
 
         {/* ——— Környék ——— */}
-        <section id="kornyek" aria-labelledby="area-title" className="relative scroll-mt-24 bg-ivory-deep/70 py-[var(--section)]">
+        <section id="kornyek" aria-labelledby="area-title" className="relative scroll-mt-24 bg-sage-mist/80 py-[var(--section)]">
           <div className="wrap grid items-center gap-12 md:grid-cols-12">
             <div className="md:col-span-5">
               <p className="eyebrow">{t.sections.area}</p>
@@ -191,7 +193,7 @@ export default async function HomePage() {
         {/* ——— Foglalási felhívás ——— */}
         <section aria-labelledby="cta-title" className="relative isolate overflow-hidden">
           <div className="absolute inset-0 -z-10 opacity-70 fade-edges">
-            <Visual media={g(5) ?? cover} label="esti fény a vízen" tone="dusk" />
+            <Visual media={g(5) ?? cover} label="esti fény a vízen" tone="dusk" illustration="dusk" />
           </div>
           <div className="absolute inset-0 -z-10 bg-ivory/55" />
           <div className="wrap py-[var(--section)] text-center">

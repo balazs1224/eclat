@@ -19,4 +19,5 @@ npm test                 # árazási és foglalási tesztek (TEST_DATABASE_URL a
 | `src/app/admin/` | Adminfelület (Server Actions) |
 | `db/migrations/` | SQL séma |
 | `scripts/` | Migráció, seed (DEMÓ/PLACEHOLDER adatok), admin létrehozás, ütemezett feladatok |
+| `scripts/illustrations/` | Hangulati illusztrációk generátora: `python3 scripts/illustrations/scenes.py && node scripts/illustrations/rasterize.mjs` |
 | `tests/` | Vitest: árazás (egység) és foglalás (valódi PostgreSQL) |

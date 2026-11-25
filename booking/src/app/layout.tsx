@@ -9,7 +9,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: { default: "Éclat · Szállás Balatonbogláron", template: "%s · Éclat Balatonboglár" },
   description: "Nyári szállás Balatonbogláron, a Balaton déli partján — foglaljon közvetlenül, közvetítő nélkül.",
-  openGraph: { type: "website", locale: "hu_HU", siteName: "Éclat Balatonboglár" },
+  openGraph: {
+    type: "website",
+    locale: "hu_HU",
+    siteName: "Éclat Balatonboglár",
+    images: [{ url: "/illustrations/salon.webp", width: 2000, height: 1500, alt: "Éclat — hangulati illusztráció" }],
+  },
   alternates: { canonical: "/" },
 };
 

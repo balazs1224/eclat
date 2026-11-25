@@ -1,4 +1,5 @@
 import type { MediaItem } from "@/lib/public-data";
+import { ILLUSTRATIONS, type IllustrationName } from "@/lib/illustrations";
 
 const TONES = {
   lake: "radial-gradient(120% 80% at 70% 20%, #f3efe6 0%, #dfe5e3 38%, #b9c7c8 70%, #8fa4a8 100%)",
@@ -9,7 +10,10 @@ const TONES = {
 
 export type Tone = keyof typeof TONES;
 
-/** Fotó, ha van feltöltve; különben visszafogott, egyértelműen jelölt helykitöltő kompozíció. */
+/**
+ * Fotó, ha van feltöltve; különben a moodboardból merített saját illusztráció (ha meg van adva),
+ * végső esetben színátmenetes helykitöltő. Az illusztráció egyértelműen jelölt, nem a szállást ábrázolja.
+ */
 export function Visual({
   media,
   label,
@@ -18,6 +22,7 @@ export function Visual({
   sizes = "100vw",
   priority = false,
   tagClassName = "bottom-3 left-3",
+  illustration,
 }: {
   media?: MediaItem | null;
   label: string;
@@ -26,6 +31,7 @@ export function Visual({
   sizes?: string;
   priority?: boolean;
   tagClassName?: string;
+  illustration?: IllustrationName;
 }) {
   if (media) {
     return (
@@ -42,6 +48,28 @@ export function Visual({
         decoding="async"
         className={`h-full w-full object-cover ${className}`}
       />
+    );
+  }
+  if (illustration) {
+    const ill: { w: number; h: number; alt: string; pos?: string } = ILLUSTRATIONS[illustration];
+    return (
+      <div className={`relative h-full w-full overflow-hidden ${className}`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/illustrations/${illustration}.webp`}
+          srcSet={`/illustrations/${illustration}-800.webp 800w, /illustrations/${illustration}.webp ${ill.w}w`}
+          sizes={sizes}
+          width={ill.w}
+          height={ill.h}
+          alt={ill.alt}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding="async"
+          className="h-full w-full object-cover"
+          style={ill.pos ? { objectPosition: ill.pos } : undefined}
+        />
+        {label && <span className={`placeholder-tag absolute ${tagClassName}`}>Illusztráció · [PLACEHOLDER: valós fotó — {label}]</span>}
+      </div>
     );
   }
   return (

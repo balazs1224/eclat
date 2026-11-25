@@ -11,3 +11,5 @@ build/
 graphify-out/
 *.tsbuildinfo
 next-env.d.ts
+__pycache__/
+booking/public/illustrations/*.svg
