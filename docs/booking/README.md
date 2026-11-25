@@ -10,6 +10,7 @@ Az alkalmazás a [`booking/`](../../booking) mappában van.
 | [FIZETES.md](FIZETES.md) | Stripe / Barion / SimplePay összevetés, a fizetési modul bekötése |
 | [JOGI-ELLENORZES.md](JOGI-ELLENORZES.md) | NTAK, VIZA, GDPR, számlázás, IFA — ellenőrizendő pontok |
 | [TELEPITES.md](TELEPITES.md) | Helyi fejlesztés, éles telepítés, cron, mentés és visszaállítás, élesítési lista |
+| [CLAUDE-SKILLEK.md](CLAUDE-SKILLEK.md) | Ajánlott Claude skillek, csatlakozók és létrehozandó projekt-skillek |
 
 ## Mi kész, mi demó, mi vár integrációra
 
